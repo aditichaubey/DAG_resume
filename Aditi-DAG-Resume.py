@@ -8,12 +8,12 @@ from google.cloud import storage
 # Define the bucket and file paths
 BUCKET_NAME = 'us-east1-dev-composer-bc71c2fb-bucket'
 FILE_PATHS = {
-    'Profile': 'sql/Resume/Profile.csv',
-    'Experience': 'sql/Resume/Experience.csv',
-    'Skills': 'sql/Resume/Skills.csv',
-    'Certifications': 'sql/Resume/Certifications.csv',
-    'Achievements': 'sql/Resume/Achievements.csv',
-    'Education': 'sql/Resume/Education.csv'
+    'Profile': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Profile.csv',
+    'Experience': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Experience.csv',
+    'Skills': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Skills.csv',
+    'Certifications': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Certifications.csv',
+    'Achievements': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Achievements.csv',
+    'Education': 'C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Education.csv'
 }
 
 def read_csv_from_gcs(file_name):
@@ -44,37 +44,37 @@ with DAG('read_csv_dag',
     profile_task = PythonOperator(
         task_id='read_profile',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Profile']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Profile.csv']},
     )
 
     experience_task = PythonOperator(
         task_id='read_experience',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Experience']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Experience.csv']},
     )
 
     skills_task = PythonOperator(
         task_id='read_skills',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Skills']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Skills.csv']},
     )
 
     certifications_task = PythonOperator(
         task_id='read_certifications',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Certifications']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Certifications.csv']},
     )
 
     achievements_task = PythonOperator(
         task_id='read_achievements',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Achievements']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Achievements.csv']},
     )
 
     education_task = PythonOperator(
         task_id='read_education',
         python_callable=read_csv_from_gcs,
-        op_kwargs={'file_name': FILE_PATHS['Education']},
+        op_kwargs={'file_name': FILE_PATHS['C:\Users\a869299\OneDrive - Eviden\Desktop\PS\Resume\Education.csv']},
     )
 
     # Set task dependencies to run in sequence
